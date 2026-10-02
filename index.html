@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- sssdfg.com origin story https://www.reddit.com/r/sssdfg/comments/1rvavv5/comment/oar65l6/?context=3 -->
+<!--
+                                      ..:::::::.                                
+                                   .:..      ..:--.                             
+                                 ...............::-=:                           
+                                :......::::......::-==.                         
+                              .-:.......::::::....::-=+*:                       
+                              =-.        .:::::::::=+=--*:.                     
+                              =-.          .::::::=:    -=......................
+                           ...-=:           .::--:     -:=::::::::::...:::::::::
+                         ....::=::.         .:-++:     -+*-:::::::::::::::::::-:
+                       .....:::-=::::.. ...:: -.-++-:-+#%=----------------------
+                      ....:::----=-....:::--::-=:+##+*#*====---------------=====
+                      .:..:::-====++-:::::::--=+++#@@*++=======--------=========
+                 .:..-++*=--===+*=+#*+-:::----=+*+%%*+++++===================+++
+               .-.....-::.  :==--:-+%++-::.:::-=+*#*++++++++===============+++++
+             :........::-+:-+%%*+==+++++:...:-=*#****++++++++==============+++++
+            ...-...:...:=%::----:=+++++*+---::=##****+++++++++++================
+            ..:::..:::.:=*-.::....:=*+++=:++=-=%#****++++*+++++++===============
+            ..-...:-.:::-+*:::::---=#+-:::-*==+@@%#**+++*++++==========---------
+             .-= .:=.::-:=%-:--=--:+%::::::++=+@*****#%*+=========--------------
+              .--..--.:-.:*+=++++-:=+::::::===+#=---=+*%%%*==--------:::::::::::
+                ==.:-.:-::+##*#***+========+=========+++##%#----::::::::....:...
+                 .....:-=+#####*---=======++=----=----++#@@@#:::::::............
+                  ...:---=**##*=::::-======+=-::-=---=*#@%**@::..........       
+                    ...:-+*+++=:. .::---===++-::----=+##@#--*-........          
+                      ...    .:.   .:::--=+*+-:::---=+*##:.-#*
+-->
+<!-- wjeeikf HIRNG HIRNG hjksdhf!!1 conctatct me on diskrod if u funi ideaz (@nadwey) hhhhhgfdssjkf 🗣️‼️  -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                background-color: #000000;
+                margin: 0;
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .sssdfg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 35vw;
+                max-height: 35vh;
+            }
+        </style>
+    </head>
+    <body>
+        <img class="sssdfg" src="creature.webp" />
+
+        <script>
+            const img = document.getElementsByClassName("sssdfg")[0];
+
+            let speedX = 1;
+            let speedY = 1;
+
+            let x = 0;
+            let y = 0;
+
+            function animate() {
+                const rect = img.getBoundingClientRect();
+                const winWidth = window.innerWidth;
+                const winHeight = window.innerHeight;
+
+                x += speedX;
+                y += speedY;
+
+                if (x + rect.width >= winWidth) {
+                    x = winWidth - rect.width;
+                    speedX = -Math.abs(speedX);
+                } else if (x <= 0) {
+                    x = 0;
+                    speedX = Math.abs(speedX);
+                }
+
+                if (y + rect.height >= winHeight) {
+                    y = winHeight - rect.height;
+                    speedY = -Math.abs(speedY);
+                } else if (y <= 0) {
+                    y = 0;
+                    speedY = Math.abs(speedY);
+                }
+
+                img.style.transform = `translate(${x}px, ${y}px)`;
+
+                // shit breaks sometimes on my 240hz monitor
+                // oh well
+                requestAnimationFrame(animate);
+            }
+
+            img.onload = () => {
+                x = Math.random() * (window.innerWidth - img.getBoundingClientRect().width);
+                y = Math.random() * (window.innerHeight - img.getBoundingClientRect().height);
+
+                requestAnimationFrame(animate);
+            };
+        </script>
+    </body>
+</html>
+<!-- why is this site still fucking alive -->
